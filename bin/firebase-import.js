@@ -226,7 +226,7 @@ ChunkUploader.prototype.uploadNext = function() {
   };
 
   if ('json' in chunk) {
-    chunk.ref.set(chunk.json, onComplete);
+    chunk.ref.push(chunk.json, onComplete);
   } else {
     assert('priority' in chunk)
     chunk.ref.setPriority(chunk.priority, onComplete);
